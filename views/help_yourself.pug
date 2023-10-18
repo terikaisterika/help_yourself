@@ -1,0 +1,14 @@
+extends template.pug
+include mixins/_button.pug
+block content
+  div
+    div
+      h2 Мое состояние
+      form(action='/help_yourself' method='post')
+        select(name="mental_state")
+          option(value="сonstantly_tired") Постоянно уставший
+          option(value="disgust") Переодически отвращение ко всему
+          option(value="everything_is_fine") У меня всегда все в порядке.
+          option(value="everything_is_fine_or_no") У меня всегда все в порядке. Или я боюсь себе признаться
+        br
+        input.button(type="submit" value="Отправить")

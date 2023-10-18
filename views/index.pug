@@ -1,0 +1,9 @@
+extends template.pug
+include mixins/_button.pug
+include mixins/_links.pug
+block content
+  p Приложение для тех, кто потерялся в этой жизни.
+  p Вряд ли оно поможет Вам в жизни, но по крайней мере поможет покопаться в себе.
+  p Уверены, что хотите покопаться в себе?
+  +link(textButtonYes, buttonClass,"/help_yourself")
+  +link(textButtonNo, buttonClass,"/normal")
