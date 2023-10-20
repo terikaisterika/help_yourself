@@ -12,3 +12,20 @@ block content
           option(value="everything_is_fine_or_no") У меня всегда все в порядке. Или я боюсь себе признаться
         br
         input.button(type="submit" value="Отправить")
+block self_examination
+  div
+    h2 Идем дальше?
+    p Кто Вас больше всех расстраивает или делает больно?
+    p Ответ на этот вопрос Вы даёте себе. Это нигде не будет сохранено. Вы отвечаете прежде всего себе.
+    div(id='hurting')
+      form(name='hurting_me')
+        select(name='hurting_me_sel')
+          option(value="family") Кто-то из семьи?
+          option(value="partner") Партнер в отношениях?
+          option(value="colleague") Кто-то из коллег?
+          option(value="classmate") Одноклассник?
+          option(value="you_yourself") Ты сам?
+          option(value="another_option") Другой вариант?
+        br
+        button.button(type="submit" id="submit_hurting") Отправить 
+    br

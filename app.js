@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const jsonParser = express.json();
 const host = '127.0.0.1';
 const port = 7000;
 const bodyParser = require('body-parser');
@@ -35,6 +35,15 @@ app.post('/help_yourself', urlEncoder, function (req, res) {
   res.render('answer', {
     title: 'Если честно, я не знаю, что с Вами',
     answer: mental_state(req.body.mental_state),
+  });
+});
+const herting_me = require('./helpers/herting_me');
+app.post('/it_hurts_me', jsonParser, (req, res) => {
+  if (!req.body) return res.status(400);
+  console.log('Terika req.body: ', req.body);
+  return res.json({
+    aggressor: req.body.textContent,
+    answer: herting_me(req.body.value),
   });
 });
 
